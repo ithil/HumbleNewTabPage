@@ -8,6 +8,8 @@ body {
 	font-size: 62.5%;
 	line-height: 1;
 }
+
+
 #main {
 	width: 80%;
 	margin: 5% auto 0;
@@ -15,6 +17,14 @@ body {
 	max-width: 100%;
 	white-space: nowrap;
 	-webkit-user-select: none;
+	-webkit-filter: grayscale(1);
+	opacity: .15;
+	transition: all 1s linear;
+}
+#main:hover {
+	-webkit-filter: grayscale(0);
+	opacity: 1;
+	-webkit-font-smoothing:antialiased;
 }
 #main ul, .menu {
 	margin: 0;
@@ -69,7 +79,7 @@ body {
 	display: inline-block;
 	vertical-align: top;
 	box-sizing: border-box;
-	padding: 10px 0 20px 0;
+	padding: 10px;
 	min-height: 300px;
 }
 #main .empty {

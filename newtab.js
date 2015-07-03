@@ -1408,6 +1408,22 @@ var themes = {
 		highlight_font_color: '#ffffff',
 		shadow_color: '#97cbff'
 	},
+	Purplehaze: {
+		font_color: '#000000',
+		font: 'San Francisco Display',
+		font_size: 15,
+		background_color: '#ffffff',
+		highlight_color: '#fbfbfb',
+		highlight_font_color: '#bc3aff',
+		shadow_color: '#ffffff',
+		show_weather: 0,
+		spacing: 1.082,
+		v_margin: 0.85,
+		width: 0.915,
+		shadow_blur: 0,
+		highlight_round: 0.75,
+		fade: 0
+	},
 	Dusk: {
 		font_color: '#c8b9be',
 		background_color: '#56546b',
