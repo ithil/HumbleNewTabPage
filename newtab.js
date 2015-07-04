@@ -1376,7 +1376,6 @@ var config = {
 	spacing: 1,
 	width: 1,
 	h_pos: 1,
-	v_margin: 1,
 	slide: 1,
 	hide_options: 0,
 	lock: 0,
@@ -1409,20 +1408,21 @@ var themes = {
 		shadow_color: '#97cbff'
 	},
 	Purplehaze: {
-		font_color: '#000000',
+		font_color: '#444',
 		font: 'San Francisco Display',
 		font_size: 15,
 		background_color: '#ffffff',
 		highlight_color: '#fbfbfb',
-		highlight_font_color: '#bc3aff',
+		highlight_font_color: '#d000ff',
 		shadow_color: '#ffffff',
 		show_weather: 0,
 		spacing: 1.082,
-		v_margin: 0.85,
 		width: 0.915,
 		shadow_blur: 0,
 		highlight_round: 0.75,
-		fade: 0
+		fade: .25,
+		number_top: 19,
+		number_closed: 19,
 	},
 	Dusk: {
 		font_color: '#c8b9be',
@@ -1589,10 +1589,6 @@ function getStyle(key, value) {
 		case 'h_pos':
 			var margin = 100 - scale(getConfig('width'), 80, 100, 20);
 			return '#main { left: ' + scale(value, 0, margin/2, -margin/2) + '%; }';
-		case 'v_margin':
-			return '#main { margin-top: ' + (getConfig('auto_scale') ?
-				scale(value, 5, 20) + '%' :
-				scale(value, 80, 600) + 'px') + '; }';
 		case 'hide_options':
 			return '#options_button { opacity: 0; }';
 		case 'css':
@@ -1654,7 +1650,6 @@ function onChange(key, value) {
 		onChange('shadow_color');
 	else if (key == 'auto_scale') {
 		onChange('width');
-		onChange('v_margin');
 	}
 
 	// update options panel
