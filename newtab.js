@@ -1382,12 +1382,12 @@ function refreshWeather(data, url) {
 
 // options : default values
 var config = {
-	font: 'Sans-serif',
-	font_size: 16,
+	font: 'PT Serif',
+	font_size: 17,
 	theme: 'Default',
-	font_color: '#555555',
+	font_color: '#000000',
 	background_color: '#ffffff',
-	highlight_color: '#e4f4ff',
+	highlight_color: '#adbfc9',
 	highlight_font_color: '#000000',
 	shadow_color: '#57b0ff',
 	background_image_file: '',
@@ -1395,7 +1395,7 @@ var config = {
 	background_align: 'left top',
 	background_repeat: 'repeat',
 	background_size: 'auto',
-	shadow_blur: 1,
+	shadow_blur: 0,
 	highlight_round: 1,
 	fade: 1,
 	spacing: 1,
