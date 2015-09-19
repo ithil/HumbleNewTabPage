@@ -65,6 +65,29 @@ function render(node, target) {
 	return li;
 }
 
+
+function ColorIcons() {
+    var imgs = document.getElementsByTagName('img');
+    var aImgs = Array.prototype.slice.call(imgs);
+    aImgs.forEach(function(e, i, aarray) {
+        var src = e.getAttribute('src');
+        var srcmatch = src.match(/chrome:\/\/favicon\//);
+        if(srcmatch != null) {
+            RGBaster.colors(e, function(p) {
+                    var mySpan = document.createElement("span");
+                    mySpan.innerHTML = "&nbsp;";
+                    mySpan.style.margin = "-3px .4em 0 0";
+                    mySpan.style.backgroundColor = p.dominant;
+                    mySpan.style.padding = "1px 5px";
+                    mySpan.style.borderRadius = "4px";
+                    if(e.parentNode) {
+                        e.parentNode.replaceChild(mySpan, e);
+                    }
+                    })
+        }
+    }) 
+}
+
 // render an array of bookmark nodes
 function renderAll(nodes, target, toplevel) {
 	var ul = document.createElement('ul');
@@ -787,6 +810,7 @@ function getSubTree(id, callback) {
 					if (coords[id])
 						removeRow(coords[id].x, coords[id].y);
 				}
+            ColorIcons();
 			});
 	}
 }
@@ -881,6 +905,7 @@ function toggle(node, a) {
 					animate(node, a, isopen);
 				}
 			});
+        ColorIcons();
 	}
 }
 
